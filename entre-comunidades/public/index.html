@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Entre: un piloto de comunidades y encuentros voluntarios por intereses compartidos. Demostración sintética de Yanz Studio Systèmes."
+    />
+    <title>Entre · lo que te gusta, en compañía</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Ir al contenido</a>
+    <div class="demo-strip">
+      UN PROYECTO DE YANZ STUDIO SYSTÈMES <span>·</span> Demostración con
+      personas, lugares y encuentros ficticios
+    </div>
+    <header class="site-header">
+      <a class="brand" href="#explore" aria-label="Entre, inicio"
+        ><span class="brand-mark"><i></i><i></i><i></i></span>entre<span
+          class="brand-period"
+          >.</span
+        ></a
+      >
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <button data-view="explore" class="nav-link active">Explorar</button
+        ><button data-view="communities" class="nav-link">Comunidades</button
+        ><button data-view="mine" class="nav-link">Mis encuentros</button>
+      </nav>
+      <div class="header-actions">
+        <button
+          id="notifications"
+          class="notification-button"
+          aria-label="Abrir notificaciones"
+          hidden
+        >
+          <span aria-hidden="true">♧</span
+          ><span id="notification-count" class="count-dot" hidden
+            >0</span
+          ></button
+        ><button id="account" class="button dark">
+          Crear mi perfil <span>↗</span>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> INTERESES QUE SE ENCUENTRAN</p>
+          <h1>Lo que te gusta,<br />mejor <em>en compañía.</em></h1>
+          <p class="hero-text">
+            Un dibujo, un libro, una idea o un partido.<br />Encuentra tu
+            comunidad y haz espacio para un nuevo plan.
+          </p>
+          <div class="hero-actions">
+            <a class="button dark large" href="#discover"
+              >Encontrar un plan <span>↗</span></a
+            ><span class="hero-note"
+              >A tu ritmo.<br />Porque compartir también se elige.</span
+            >
+          </div>
+          <div class="hero-bottom">
+            <span class="little-spark">✳</span> Sin ubicación en tiempo real.
+            Tú eliges tu zona.
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="art-center">
+            <span>hay algo<br />que nos<br /><em>conecta.</em></span>
+          </div>
+          <div class="art-chip art-chip-one">◈ &nbsp; crear</div>
+          <div class="art-chip art-chip-two">⌘ &nbsp; aprender</div>
+          <div class="art-chip art-chip-three">◉ &nbsp; jugar</div>
+          <div class="art-chip art-chip-four">✳ &nbsp; compartir</div>
+          <span class="art-star star-one">✳</span
+          ><span class="art-star star-two">✧</span>
+          <div class="art-dot"></div>
+        </div>
+      </section>
+      <section class="interests-section" aria-label="Explora por interés">
+        <div class="section-kicker">CADA INTERÉS ES UN PUNTO DE PARTIDA</div>
+        <div id="interest-chips" class="interest-chips">
+          <button class="interest-chip active" data-interest="">
+            Todos los intereses
+          </button>
+        </div>
+      </section>
+      <section id="discover" class="discovery">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" id="view-kicker">ENCUENTROS VOLUNTARIOS</p>
+            <h2 id="view-title">Tu próximo plan empieza aquí.</h2>
+            <p id="view-description">
+              Explora propuestas y encuentros confirmados. Tú decides a cuáles
+              sumarte.
+            </p>
+          </div>
+          <button id="create-action" class="button outline" hidden>
+            Proponer encuentro <span>＋</span>
+          </button>
+        </div>
+        <form id="filters" class="filter-bar" role="search">
+          <label class="search-field"
+            ><span aria-hidden="true">⌕</span
+            ><span class="sr-only">Buscar por nombre o tema</span
+            ><input
+              id="query"
+              type="search"
+              placeholder="¿Qué te gustaría compartir?"
+              maxlength="80" /></label
+          ><label class="zone-field"
+            ><span class="sr-only">Zona aproximada</span
+            ><select id="zone">
+              <option value="">Cualquier zona</option>
+            </select></label
+          ><label
+            ><span class="sr-only">Ordenar resultados</span
+            ><select id="order">
+              <option value="date">Más próximos</option>
+              <option value="recommended">Afinidad explicada</option>
+            </select></label
+          ><button class="button plum" type="submit">
+            Buscar <span>→</span>
+          </button>
+          <details class="more-filters">
+            <summary>Más filtros</summary>
+            <div class="filter-extra">
+              <label>Desde (Perú)<input id="date-from" type="date" /></label
+              ><label>Hasta (Perú)<input id="date-to" type="date" /></label
+              ><label class="check-line"
+                ><input type="checkbox" id="only-available" /> Solo con
+                plazas</label
+              ><button id="reset-filters" type="button" class="text-button">
+                Limpiar filtros
+              </button>
+            </div>
+          </details>
+        </form>
+        <div class="results-meta">
+          <span id="result-count" aria-live="polite">Cargando encuentros…</span
+          ><span id="result-note"
+            >Los lugares de este piloto son de demostración.</span
+          >
+        </div>
+        <div id="results" class="card-grid" aria-busy="true">
+          <div class="empty-state">Preparando los encuentros…</div>
+        </div>
+      </section>
+      <section class="care-section">
+        <div class="care-symbol">✳</div>
+        <div>
+          <p class="eyebrow">COMPARTIR, CON CUIDADO</p>
+          <h2>Tu comodidad también importa.</h2>
+          <p>
+            Coordina dentro del encuentro, prioriza lugares públicos y respeta
+            los límites de las demás personas. Puedes cancelar, bloquear o
+            reportar.
+          </p>
+          <a href="/privacy" class="text-link"
+            >Privacidad y reglas del piloto <span>↗</span></a
+          >
+        </div>
+        <div class="care-note">
+          <span>18+</span>
+          <p>
+            Mayoría de edad autodeclarada.<br />La identidad y la asistencia no
+            se verifican. Ninguna valoración garantiza seguridad.
+          </p>
+        </div>
+      </section>
+      <footer class="site-footer">
+        <a class="brand footer-brand" href="#explore">entre.</a>
+        <p>
+          Un proyecto de <strong>Yanz Studio Systèmes</strong><br />Nombre
+          provisional · piloto local con datos sintéticos
+        </p>
+        <div>
+          <a href="/privacy">Privacidad y convivencia</a
+          ><button id="open-demo" class="text-button">
+            Recorrer la demostración
+          </button>
+        </div>
+        <span class="footer-note"
+          >Un interés compartido.<br />Un primer encuentro.</span
+        >
+      </footer>
+    </main>
+    <nav class="mobile-nav" aria-label="Navegación móvil">
+      <button data-view="explore"><span>◈</span>Explorar</button
+      ><button data-view="communities"><span>✳</span>Comunidades</button
+      ><button data-view="mine"><span>◷</span>Mis planes</button
+      ><button id="mobile-account"><span>◎</span>Mi perfil</button>
+    </nav>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div class="modal-heading">
+        <div>
+          <p id="modal-eyebrow" class="eyebrow"></p>
+          <h2 id="modal-title"></h2>
+        </div>
+        <button
+          id="close-modal"
+          class="icon-button"
+          aria-label="Cerrar ventana"
+        >
+          ×
+        </button>
+      </div>
+      <div id="modal-content"></div>
+    </dialog>
+  </body>
+</html>

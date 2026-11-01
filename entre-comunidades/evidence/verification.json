@@ -1,0 +1,39 @@
+{
+  "date_utc": "2026-10-29T22:58:50.054578+00:00",
+  "project": "entre-comunidades",
+  "version": "0.1.0",
+  "runtime": "v24.22.1",
+  "tests": {
+    "tests": 28,
+    "pass": 28,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "typescript": "strict build passed",
+  "dependency_advisories_reported": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "scope": "Local synthetic application; no deployment, real meetings, external notifications or paid services.",
+  "screenshots": [
+    "entre-cancelacion.jpg",
+    "entre-comunidades.jpg",
+    "entre-coordinacion.jpg",
+    "entre-inicio.jpg",
+    "entre-mensaje-guardado.jpg",
+    "entre-registro.jpg"
+  ],
+  "browser_review": {
+    "desktop": "community discovery, membership, reservation, stored message, cancellation, notifications inspected with fictitious persona",
+    "registration": "HTTP end-to-end tested; browser inspected form, then used fictitious persona; no user credentials entered",
+    "final_changes": "roles, explicit revision confirmation and source color adjustments were checked by code/tests but not rechecked in browser",
+    "mobile": "responsive implementation present; browser/device verification pending",
+    "limitation": "Automatic approval review denied further browser observation because of usage limit. No alternate browser route was used."
+  },
+  "security_review": "internal development review, not independent audit or certification"
+}

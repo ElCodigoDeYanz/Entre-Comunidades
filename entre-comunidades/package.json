@@ -1,0 +1,20 @@
+{
+  "name": "entre-comunidades",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.15 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.server.json && tsc -p tsconfig.client.json",
+    "dev": "node dist/server/index.js",
+    "start": "node dist/server/index.js",
+    "test": "npm run build && node --test --test-concurrency=1 dist/tests/*.test.js",
+    "maintenance": "node dist/server/maintenance.js"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "@types/node": "24.10.1"
+  }
+}

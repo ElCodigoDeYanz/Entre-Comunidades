@@ -1,0 +1,36 @@
+✔ registro exige mayoría de edad, consentimiento y rechaza privilegios enviados (168.530848ms)
+✔ credenciales derivadas, cookie HttpOnly/SameSite y sesión revocable (192.524707ms)
+✔ CSRF, origen cruzado y métodos inesperados se rechazan (104.343408ms)
+✔ sin sesión no se leen notificaciones, coordinación ni exportaciones (116.646767ms)
+✔ comunidad privada no filtra encuentros, reglas ni conversación (112.219217ms)
+✔ solicitud privada requiere aprobación de moderación y no puede autoaprobarse (199.220063ms)
+✔ registro duplicado conserva una sola inscripción y las propuestas no admiten plazas (215.641002ms)
+✔ aforo persistente: cuatro workers compiten por una plaza, el resto espera (620.444768ms)
+✔ SQLite protege el aforo incluso al omitir el servicio (108.086429ms)
+✔ cancelar promueve por orden y exige confirmar antes de escribir (209.992886ms)
+✔ cambios importantes conservan plaza, notifican y requieren reconfirmación (104.761409ms)
+✔ solo organización o moderación editan; solo moderación confirma propuestas (184.865791ms)
+✔ cancelación quita acceso a la conversación y se puede repetir sin duplicar (176.427974ms)
+✔ bloquear a organización cancela la inscripción, oculta sus encuentros y aún permite reportarla (105.225698ms)
+✔ reportes conservan evidencia y solo moderación sin conflicto puede resolver (103.693158ms)
+✔ opiniones exigen actividad realizada e inscripción; no afirman asistencia verificada (112.495776ms)
+✔ notificaciones ajenas no pueden marcarse leídas (117.117791ms)
+✔ eliminar cuenta revoca sesiones, borra perfil/textos y libera plaza (284.049499ms)
+✔ límites de intento persisten y el modo demo se puede desactivar (18.51189ms)
+✔ rechaza datos de contacto, aforo inválido y lugar ajeno al catálogo (99.467139ms)
+✔ búsqueda manual y recomendaciones describen razones sin geolocalización (96.176766ms)
+✔ política de retención limpia sesiones y notificaciones vencidas (123.458693ms)
+✔ recorrido completo por HTTP: registro, intereses, búsqueda, comunidad, plaza, coordinación y cancelación (193.334399ms)
+✔ solo la organización asigna roles; retirar membresía revoca coordinación y libera aforo (106.875635ms)
+✔ retención elimina evidencia vencida y mensaje de origen en la misma ejecución (134.612227ms)
+✔ JSON y cabeceras impiden tratar los mensajes como HTML ejecutable (124.790945ms)
+✔ reservar, reconfirmar o editar exige la versión que la persona revisó (192.031766ms)
+✔ el límite HTTP de acceso conserva su clave al reiniciar la aplicación (1017.374716ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5466.794089
